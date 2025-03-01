@@ -1,5 +1,5 @@
 import { GoogleAuthProvider,signInWithPopup, signOut } from "firebase/auth";
-import {auth} from  "/firebase/firebaseConfig"
+import {auth} from  "../firebase/firebaseConfig"
 
 
 const initialState={
