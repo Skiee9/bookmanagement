@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link} from 'react-router-dom'
+import {logout} from '../redux/actions/authActions'
 import { logoutUser } from '@/redux/actions.js/authActions'
 // import { useDispatch, useSelector } from 'react-redux'
 
@@ -14,8 +15,15 @@ const Navbar = () => {
        <h2>My Library</h2>
        <div>
         <Link to="/">Home</Link>
-       {user ? <Link to="/mybooks">My Books</Link>: <Link to="/login">Login/register</Link>}
-        {user && <button onClick={()=>dispatch(logoutUser())}>Logout</button>}
+      {user && <Link to="/my-books">My Books</Link>}
+      {!user ? (
+        <>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
+        </>
+      ):(
+        <button onClick={()=>dispatch(logout())}>Logout</button>
+      )}
        </div>
       </nav>
     </div>

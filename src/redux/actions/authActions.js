@@ -2,7 +2,7 @@
 // import { create } from "domain"
 
 
-import {auth} from "./firebase/firebaseConfig";
+import {auth} from "../firebase/firebaseConfig";
 import {signInWithEmailAndPassword, createUserWithEmailAndPassword,signOut} from 'firebase/auth'
 
 export const REGISTER_USER="REGISTER_USER"
